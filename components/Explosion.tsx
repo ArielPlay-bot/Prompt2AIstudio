@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+// Fix: Import `Variants` type from framer-motion to correctly type animation variants.
+import { motion, Variants } from 'framer-motion';
 
 interface ExplosionProps {
   x: number;
@@ -20,7 +21,8 @@ const Explosion: React.FC<ExplosionProps> = ({ x, y, onComplete, particleCount =
     radius: Math.random() * 280 + 70, // explosion radius between 70px and 350px
   })), [particleCount, colors]);
   
-  const particleVariants = {
+  // Fix: Explicitly type with `Variants` to resolve error where `ease: "easeOut"` was incorrectly inferred as `string`.
+  const particleVariants: Variants = {
     initial: {
       x: 0,
       y: 0,
@@ -41,7 +43,8 @@ const Explosion: React.FC<ExplosionProps> = ({ x, y, onComplete, particleCount =
     }
   };
 
-  const shockwaveVariants = {
+  // Fix: Explicitly type with `Variants` to resolve error where `ease: "easeOut"` was incorrectly inferred as `string`.
+  const shockwaveVariants: Variants = {
       initial: {
           scale: 0,
           opacity: 0.8,

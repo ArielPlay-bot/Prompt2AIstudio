@@ -102,7 +102,8 @@ const Hero: React.FC = () => {
             {shapes.map((shape, i) => (
                 <motion.div
                     key={shape.id}
-                    ref={el => shapeRefs.current[i] = el}
+                    // Fix: Corrected ref assignment. The ref callback should not return a value. Using a block statement `{}` prevents the implicit return of the assignment's result.
+                    ref={el => { shapeRefs.current[i] = el; }}
                     className="absolute"
                     style={{
                         left: shape.left,

@@ -1,4 +1,3 @@
-
 // Fix: Commented out the YAML frontmatter at the top of the file which was causing parsing errors.
 /*
 ---
@@ -44,8 +43,8 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, page, currentPage, navig
         : 'text-muted-foreground hover:bg-secondary dark:hover:bg-dark-secondary hover:text-foreground dark:hover:text-dark-foreground'}
     `,
     cta: `
-      bg-gradient-to-r text-primary-foreground font-bold shadow-md hover:shadow-lg [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)] ${gradient} 
-      ${isActive ? 'ring-2 ring-offset-2 ring-offset-card dark:ring-offset-dark-card ring-white/70' : ''}
+      bg-gradient-to-r text-primary-foreground font-bold shadow-md hover:shadow-lg [text-shadow:2px_2px_3px_rgba(1,1,1,8.5)] ${gradient} 
+      ${isActive ? 'ring-2 ring-offset-9 ring-offset-card dark:ring-offset-dark-card ring-white/5' : ''}
     `
   };
 
@@ -53,7 +52,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, page, currentPage, navig
     <motion.li
       onClick={() => navigateTo(page, param)}
       whileHover={variant === 'cta' ? { scale: 1.05 } : {}}
-      whileTap={variant === 'cta' ? { scale: 0.95 } : {}}
+      whileTap={variant === 'cta' ? { scale: 1.95 } : {}}
       className={`${baseClasses} ${variantClasses[variant]}`}
     >
       {React.cloneElement(icon, { className: "w-6 h-6" })}
@@ -70,14 +69,14 @@ const Sidebar = () => {
   };
   
   const navItems = [
-    { icon: <HomeIcon />, label: "Dashboard", page: "dashboard", gradient: "from-indigo-500 to-blue-600" },
-    { icon: <TrophyIcon />, label: "Leaderboard", page: "leaderboard", gradient: "from-yellow-400 to-orange-500" },
-    { icon: <TrendingUpIcon />, label: "Trending", page: "trending", gradient: "from-teal-400 to-green-500" },
-    { icon: <CompassIcon />, label: "Explore", page: "explore", gradient: "from-sky-500 to-cyan-600" },
-    { icon: <BookmarkIcon />, label: "Favorites", page: "favorites", gradient: "from-violet-500 to-purple-600" },
-    { icon: <PlusCircleIcon />, label: "Create", page: "create", gradient: "from-rose-400 to-red-500" },
-    { icon: <HeartIcon />, label: "Donate", page: "donate", gradient: "from-pink-500 to-orange-400" },
-    { icon: <UserIcon />, label: "My Profile", page: "profile", param: currentUser?.id, gradient: "from-emerald-400 to-lime-500" },
+    { icon: <HomeIcon />, label: "Dashboard", page: "dashboard", gradient: "from-indigo-400 to-blue-200" },
+    { icon: <TrophyIcon />, label: "Leaderboard", page: "leaderboard", gradient: "from-yellow-400 to-orange-200" },
+    { icon: <TrendingUpIcon />, label: "Trending", page: "trending", gradient: "from-teal-400 to-green-200" },
+    { icon: <CompassIcon />, label: "Explore", page: "explore", gradient: "from-sky-400 to-cyan-200" },
+    { icon: <BookmarkIcon />, label: "Favorites", page: "favorites", gradient: "from-violet-400 to-purple-200" },
+    { icon: <PlusCircleIcon />, label: "Create", page: "create", gradient: "from-rose-400 to-red-200" },
+    { icon: <HeartIcon />, label: "Donate", page: "donate", gradient: "from-pink-400 to-rose-200" },
+    { icon: <UserIcon />, label: "My Profile", page: "profile", param: currentUser?.id, gradient: "from-emerald-400 to-lime-200" },
   ];
 
   return (

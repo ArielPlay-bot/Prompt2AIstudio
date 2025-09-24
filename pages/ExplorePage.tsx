@@ -62,7 +62,7 @@ const ExplorePage: React.FC = () => {
     <div className="space-y-8">
       <div className="bg-card dark:bg-dark-card p-4 rounded-lg border border-border dark:border-dark-border">
         <div className="relative mb-4">
-          <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
+          <SearchIcon className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search prompts by title or description..."
